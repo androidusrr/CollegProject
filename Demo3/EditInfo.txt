@@ -1,0 +1,215 @@
+📘 RupeeLoans UI Reference Guide
+
+(HTML Tags ↔ CSS Sections ↔ Purpose)
+
+1️⃣ GLOBAL / COMMON (ALL PAGES)
+📄 File: common.css
+
+Controls colors, themes, variables used everywhere.
+
+🔹 Root Variables
+:root {
+  --bg_primary
+  --bg_card
+  --bg_input
+
+  --text_primary
+  --text_secondary
+  --text_heading
+  --text_link
+  --text_hover
+
+  --status_pending
+  --status_accepted
+  --status_rejected
+}
+
+
+✅ If colors/backgrounds are broken → check this file FIRST
+
+2️⃣ HEADER / NAVIGATION (HOME + DASHBOARD)
+📄 HTML Section
+<header class="website_header">
+  <div class="company_logo">Rupee<span>Loans</span></div>
+
+  <nav class="main_navigation">
+    <a><i class="fa-solid fa-house"></i> Home</a>
+    <a><i class="fa-solid fa-right-to-bracket"></i> Login</a>
+    <a><i class="fa-solid fa-user-plus"></i> Register</a>
+    <a><i class="fa-solid fa-circle-info"></i> About</a>
+    <a><i class="fa-solid fa-envelope"></i> Contact</a>
+  </nav>
+</header>
+
+🎨 CSS Location
+
+📄 home_style.css
+📄 common.css (hover + colors)
+
+🔧 Main Classes
+Class	Purpose
+.website_header	Header container
+.company_logo	Brand text + glow
+.main_navigation	Navbar wrapper
+.main_navigation a	Nav links
+.main_navigation a i	Icons
+✨ Hover Effects
+.company_logo:hover
+.main_navigation a:hover
+.main_navigation a:hover i
+
+
+👉 If hover glow/icons don’t work → Font Awesome or common.css missing
+
+3️⃣ FONT AWESOME (ICONS)
+📄 Required in <head>
+<link rel="stylesheet"
+ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+✅ Icons Used
+Icon	Class
+Home	fa-solid fa-house
+Login	fa-solid fa-right-to-bracket
+Register	fa-solid fa-user-plus
+About	fa-solid fa-circle-info
+Contact	fa-solid fa-envelope
+User	fa-solid fa-circle-user
+Loan	fa-solid fa-file-contract
+4️⃣ DASHBOARD PAGE STRUCTURE
+📄 File: dashboard_index.jsp
+🔹 Session Check (LOGIN REQUIRED)
+String fullName = (String) session.getAttribute("full_name");
+Integer userId = (Integer) session.getAttribute("user_id");
+
+if (fullName == null) {
+  response.sendRedirect("login_index.html");
+  return;
+}
+
+
+👉 Controls access + user data
+
+5️⃣ DASHBOARD MAIN CONTAINER
+📄 HTML
+<section class="dashboard_section">
+
+🎨 CSS (dashboard_style.css)
+.dashboard_section {
+  padding: 60px;
+  background: var(--bg_primary);
+}
+
+
+👉 If whole dashboard background is wrong → common.css missing
+
+6️⃣ DASHBOARD HEADER (GREETING)
+📄 HTML
+<div class="dashboard_header">
+  <h2>Hello, <span class="user_name">Name</span></h2>
+  <p>Welcome back to your loan dashboard</p>
+</div>
+
+🎨 CSS
+.dashboard_header h2
+.dashboard_header p
+
+Element	Purpose
+.user_name	Highlighted username
+h2	Greeting
+p	Subtitle
+7️⃣ PROFILE CARD
+📄 HTML
+<div class="profile_card">
+  <div class="profile_icon">
+    <i class="fa-solid fa-circle-user"></i>
+  </div>
+
+  <div class="profile_details">
+    <p><i class="fa-user"></i> Name</p>
+    <p><i class="fa-id-card"></i> User ID</p>
+  </div>
+</div>
+
+🎨 CSS
+.profile_card
+.profile_icon i
+.profile_details p
+
+Class	Controls
+.profile_card	Card layout
+.profile_icon	Big user icon
+.profile_details	Text info
+8️⃣ LOAN SECTION
+📄 HTML
+<div class="loan_section">
+  <h3><i class="fa-file-contract"></i> Applied Loans</h3>
+
+🎨 CSS
+.loan_section h3
+
+9️⃣ LOAN TABLE
+📄 HTML
+<table class="loan_table">
+  <th>Loan ID</th>
+  <td class="status pending">Pending</td>
+</table>
+
+🎨 CSS
+.loan_table
+.loan_table th
+.loan_table td
+.loan_table tr:hover
+
+🔟 STATUS BADGES
+📄 HTML
+<td class="status pending">Pending</td>
+<td class="status approved">Approved</td>
+<td class="status rejected">Rejected</td>
+
+🎨 CSS
+.status.pending
+.status.approved
+.status.rejected
+
+
+👉 Colors come from CSS variables in common.css
+
+1️⃣1️⃣ FOOTER
+📄 HTML
+<footer class="website_footer">
+  <p>&copy; 2026 RupeeLoans</p>
+</footer>
+
+🎨 CSS
+
+📄 home_style.css
+
+1️⃣2️⃣ RESPONSIVE BEHAVIOR
+📄 CSS
+@media (max-width: 768px) {
+  .profile_card {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+🧭 HOW TO DEBUG FAST (RULE OF THUMB)
+Problem	Check
+No colors / blank UI	common.css
+Icons missing	Font Awesome
+Navbar broken	home_style.css
+Dashboard layout broken	dashboard_style.css
+User name not shown	Session attributes
+Redirect loop	LoginServlet
+
+If you want next, I can:
+
+📄 Turn this into a proper PDF / DOC structure
+
+🧩 Create a single reusable header.jsp
+
+🔐 Build a logged-in navbar switch
+
+🧠 Teach you how to debug CSS in browser dev tools
+
+Just tell me 👍

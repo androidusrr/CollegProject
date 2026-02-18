@@ -1,0 +1,268 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+
+Created on : 6 Feb 2026, 12:43:05 pm
+Author     : admin
+*/
+
+/* ================= GLOBAL RESET ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ================= ROOT VARIABLES ================= */
+:root {
+    --bg: #0B0F1A;          /* Background color for body */
+    --card: #111827;         /* Card and FAQ background */
+    --gold: #EAB308;         /* Highlight / gold color */
+    --green: #16A34A;        /* Accent green color */
+    --money_green: #16A34A;  /* Add this for card gradient */
+    --bank_blue: #1E3A8A;    /* Add this for card gradient */
+    --text_silver: #CBD5E1;  /* Secondary text color */
+    --white: #fff;           /* Default white color */
+    
+    --btn_gradient: linear-gradient(45deg, var(--money_green), var(--bank_blue));
+    --hero_btn_gradient: linear-gradient(60deg, var(--money_green), var(--bank_blue));
+    --btn_hover_shadow: rgba(22, 163, 74, 0.25);
+
+}
+
+/* ================= BODY STYLING ================= */
+body {
+    font-family: Roboto, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--white);
+}
+
+/* ================= HEADER ================= */
+.website_header {
+    background: linear-gradient(90deg, #020617, var(--card_dark));
+    padding: 20px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative; /* Required for glowing divider */
+}
+
+
+.website_header::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 95%;
+    height: 2px;
+    border-radius: 50px;
+
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(234, 179, 8, 0.8) 30%,
+        rgba(22, 163, 74, 0.9) 50%,
+        rgba(234, 179, 8, 0.8) 70%,
+        transparent 100%
+    );
+
+    box-shadow:
+        0 0 8px rgba(234, 179, 8, 0.4),
+        0 0 12px rgba(22, 163, 74, 0.3);
+
+    opacity: 0.8;
+}
+
+
+/* Company logo styling */
+.company_logo {
+    font-size: 2.5rem;
+    color: var(--gold);
+    font-weight: bold;
+}
+
+.company_logo span {
+    color: var(--green);
+}
+
+/* Navigation links */
+.main_navigation a {
+    margin-left: 25px;
+    color: var(--text_silver); /* default text */
+    position: relative;
+    text-decoration: none;
+}
+
+/* Underline */
+.main_navigation a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0%;
+    height: 2px;
+    background: var(--gold); /* gold underline */
+    transition: width 0.3s ease;
+}
+
+/* Hover effect */
+.main_navigation a:hover {
+    color: var(--gold); /* text turns gold */
+}
+.main_navigation a:hover::after {
+    width: 100%; /* underline expands */
+}
+
+
+/* ================= HERO SECTION ================= */
+.hero_section {
+    padding: 80px;
+    text-align: center;
+    background: linear-gradient(135deg, #020617, #111827);
+}
+
+/* ================= CONTENT SECTIONS ================= */
+.content_section {
+    padding: 60px 80px;
+}
+
+/* Alternate background for certain sections */
+.alt_bg {
+    background: #020617;
+}
+
+/* Headings within content */
+.content_section h2 {
+    color: var(--gold);
+    margin-bottom: 20px;
+}
+
+/* Paragraphs and list items */
+.content_section p,
+.content_section li {
+    color: var(--silver);
+    margin-bottom: 10px;
+}
+
+/* ================= GRID LAYOUT ================= */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+/* ================= CARDS ================= */
+.card {
+    background: var(--card);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+
+/* ================= ABOUT US CARDS ================= *//* ================= ABOUT US CARDS ================= */
+/* ================= ABOUT US CARDS ================= */
+.card {
+    background: var(--card); /* dark card background */
+    padding: 20px;
+    border-radius: 15px;
+
+    /* Initially no border visible */
+    border: 2px solid transparent;
+    background-image: linear-gradient(var(--card), var(--card));
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-image 0.3s ease;
+}
+
+/* Hover: show gradient border and glow */
+.card:hover {
+    transform: translateY(-6px);
+    /* Set gradient border on hover */
+    background-image: 
+        linear-gradient(var(--card), var(--card)), 
+        linear-gradient(90deg, var(--gold), var(--money_green));
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+
+    /* Optional glowing effect */
+    box-shadow: 0 0 12px var(--gold), 0 0 20px var(--money_green);
+}
+
+/* ================= FAQ ================= */
+.faq {
+    background: var(--card);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+/* ================= FOOTER ================= */
+
+.website_footer {
+    padding: 25px 60px;
+    text-align: center;
+    background: #020617; /* same as login page */
+    color: var(--text_silver);
+    position: relative; /* required for glow */
+    width: 100%;        /* full width */
+    box-sizing: border-box;
+    margin-top: auto;   /* push footer down if page content is short */
+}
+
+/* Glowing divider above footer */
+.website_footer::before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 95%;
+    height: 2px;
+    border-radius: 50px;
+
+    background: linear-gradient(
+        80deg,
+        transparent 0%,
+        rgba(234, 179, 8, 0.8) 35%,
+        rgba(22, 163, 74, 0.9) 55%,
+        rgba(234, 179, 8, 0.8) 60%,
+        transparent 100%
+    );
+
+    box-shadow:
+        0 0 8px rgba(234, 179, 8, 0.4),
+        0 0 12px rgba(22, 163, 74, 0.3);
+
+    opacity: 0.8;
+}
+
+
+
+
+/* ================= RESPONSIVE / MEDIA QUERIES ================= */
+/* Navigation and layout adjustments for smaller screens */
+@media (max-width: 1024px) {
+    .hero_section {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        text-align: center;
+    }
+
+    .website_header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px 30px;
+    }
+
+    section {
+        padding: 60px 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}

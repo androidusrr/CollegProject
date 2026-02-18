@@ -1,0 +1,77 @@
+/* ================= RESET ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* ================= COLOR VARIABLES ================= */
+:root {
+    --gold: #FACC15;
+
+    --text_primary: #FFFFFF;
+    --text_secondary: #CBD5E1;
+    --text_heading: #FACC15;
+    --text_link: #22C55E;
+    --text_hover: #FACC15;
+
+    --bg_primary: #0F172A;
+    --bg_card: #1E293B;
+    --bg_input: #111827;
+}
+
+/* ================= HEADER ================= */
+.website_header {
+    background: #020617;
+    padding: 16px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.company_logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: var(--text_primary);
+}
+
+.company_logo span {
+    color: var(--gold);
+}
+
+/* ================= NAVIGATION ================= */
+.main_navigation {
+    display: flex;
+    gap: 24px;
+}
+
+.main_navigation a {
+    color: var(--text_secondary);
+    font-size: 15px;
+    transition: all 0.3s ease;
+}
+
+.main_navigation a i {
+    margin-right: 6px;
+}
+
+/* ================= HOVER EFFECTS ================= */
+.company_logo:hover {
+    color: var(--gold);
+    text-shadow: 0 0 12px rgba(234, 179, 8, 0.7);
+    cursor: pointer;
+}
+
+.main_navigation a:hover {
+    color: var(--gold);
+    text-shadow: 0 0 10px rgba(234, 179, 8, 0.6);
+}
+
+.main_navigation a:hover i {
+    color: var(--gold);
+}

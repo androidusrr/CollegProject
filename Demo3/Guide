@@ -1,0 +1,80 @@
+Download:
+MySQL 8 WorkBench
+
+Set :
+url = jdbc:mysql://localhost:3306/rupeeloan2 // Default No need to set 
+user = root
+password = admin123
+
+Tomcat 11
+Set Username : admin
+Set Password : root
+
+
+MySQL DataBase : SetUp
+
+-- ================= STEP 1: CREATE DATABASE =================
+CREATE DATABASE IF NOT EXISTS rupeeloan2;
+USE rupeeloan2;
+
+-- ================= STEP 2: CREATE USERS TABLE =================
+CREATE TABLE IF NOT EXISTS users (
+    user_id INT NOT NULL AUTO_INCREMENT,
+    full_name VARCHAR(100) NOT NULL,
+    email VARCHAR(150) NOT NULL UNIQUE,
+    password VARCHAR(100) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (user_id)
+) ENGINE=InnoDB;
+
+-- ================= STEP 3: CREATE ADMIN TABLE =================
+CREATE TABLE IF NOT EXISTS admin (
+    admin_id INT NOT NULL AUTO_INCREMENT,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    password VARCHAR(100) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (admin_id)
+) ENGINE=InnoDB;
+
+-- ================= STEP 4: CREATE LOAN APPLICATIONS TABLE =================
+CREATE TABLE IF NOT EXISTS loan_applications (
+    loan_id INT NOT NULL AUTO_INCREMENT,
+    user_id INT NOT NULL,
+    full_name VARCHAR(100) NOT NULL,
+    email VARCHAR(150) NOT NULL,
+    aadhaar VARCHAR(12) NOT NULL,
+    pan VARCHAR(10) NOT NULL,
+    salary DECIMAL(12,2) NOT NULL,
+    loan_amount INT NOT NULL,
+    employment_type VARCHAR(50) NOT NULL,
+    bank_account_number VARCHAR(20) NOT NULL,
+    bank_name VARCHAR(100) NOT NULL,
+    bank_district VARCHAR(100) NOT NULL,
+    bank_state VARCHAR(100) NOT NULL,
+    bank_pincode VARCHAR(6) NOT NULL,
+    cbin_number VARCHAR(20) NOT NULL,
+    perm_house VARCHAR(150) NOT NULL,
+    perm_street VARCHAR(150) NOT NULL,
+    perm_city VARCHAR(100) NOT NULL,
+    perm_district VARCHAR(100) NOT NULL,
+    perm_state VARCHAR(100) NOT NULL,
+    perm_pincode VARCHAR(6) NOT NULL,
+    curr_house VARCHAR(150) NOT NULL,
+    curr_street VARCHAR(150) NOT NULL,
+    curr_city VARCHAR(100) NOT NULL,
+    curr_district VARCHAR(100) NOT NULL,
+    curr_state VARCHAR(100) NOT NULL,
+    curr_pincode VARCHAR(6) NOT NULL,
+    qualification VARCHAR(100) NOT NULL,
+    nominee_name VARCHAR(100) NOT NULL,
+    nominee_email VARCHAR(150) NOT NULL,
+    nominee_aadhaar VARCHAR(12) NOT NULL,
+    nominee_pan VARCHAR(10) NOT NULL,
+    nominee_occupation VARCHAR(100) NOT NULL,
+    nominee_salary DECIMAL(12,2) NOT NULL,
+    nominee_address TEXT NOT NULL,
+    loan_status VARCHAR(30) DEFAULT 'PENDING',
+    applied_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (loan_id),
+    FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB;

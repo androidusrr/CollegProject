@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Login - RupeeLoans</title>
+
+<link rel="stylesheet" href="about_style.css">
+<link rel="stylesheet" href="login_style.css">
+
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+/>
+</head>
+<body>
+
+<header class="website_header">
+    <div class="company_logo">Rupee<span>Loans</span></div>
+
+    <nav class="main_navigation">
+        <a href="home_index.html">
+            <i class="fa-solid fa-house"></i> Home
+        </a>
+
+        <a href="login_index.html" class="active">
+            <i class="fa-solid fa-user-shield"></i> Customer Login
+        </a>
+    </nav>
+</header>
+
+<section class="login_section">
+    <div class="login_form">
+
+        <!-- Admin Icon -->
+        <div style="text-align:center; font-size:40px; color:#dc3545; margin-bottom:10px;">
+            <i class="fa-solid fa-user-shield"></i>
+        </div>
+
+        <h2>Admin Login</h2>
+
+        <form action="Admin_Login" method="post">
+            <input type="email" name="email" placeholder="Admin Email" required>
+            <input type="password" name="password" placeholder="Admin Password" required>
+
+            <button type="submit">
+                <i class="fa-solid fa-right-to-bracket"></i> Login
+            </button>
+        </form>
+
+        <p style="margin-top:15px; color:#666; font-size:14px;">
+            Authorized personnel only
+        </p>
+
+    </div>
+</section>
+
+<footer class="website_footer">
+    © 2026 RupeeLoans. Admin Panel.
+</footer>
+
+<script>
+    const params = new URLSearchParams(window.location.search);
+    const error = params.get('error');
+
+    if(error === 'invalid') {
+        alert("Invalid admin email or password");
+    } else if(error === 'server') {
+        alert("Server error. Please try again.");
+    }
+</script>
+
+</body>
+</html>

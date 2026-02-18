@@ -1,0 +1,514 @@
+/* ================= RESET ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ================= THEME ================= */
+:root {
+    --bg_dark: #0B0F1A;
+    --card_dark: #111827;
+    --bank_blue: #1E3A8A;
+    --money_green: #16A34A;
+    --gold: #EAB308;
+    --text_silver: #CBD5E1;
+    --white: #FFFFFF;
+
+    /* Reusable gradients and shadows */
+    --btn_gradient: linear-gradient(45deg, var(--money_green), var(--bank_blue));
+    --hero_btn_gradient: linear-gradient(60deg, var(--money_green), var(--bank_blue));
+    --btn_hover_shadow: rgba(22, 163, 74, 0.25);
+}
+
+/* ================= BASE ================= */
+
+
+body {
+    font-family: "Roboto", Arial, sans-serif;
+    color: var(--white);
+    min-height: 100vh;
+    background: linear-gradient(90deg, #0b1a3a, #020617);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+   
+    flex-direction: column;
+}
+section {
+    position: relative; /* required for ::after */
+    padding: 80px 60px; /* adjust as needed */
+}
+
+section:not(:last-of-type)::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 85%;
+    height: 2px;
+    border-radius: 50px;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(234, 179, 8, 0.8) 30%,
+        rgba(22, 163, 74, 0.9) 50%,
+        rgba(234, 179, 8, 0.8) 70%,
+        transparent 100%
+    );
+    box-shadow:
+        0 0 8px rgba(234, 179, 8, 0.4),
+        0 0 12px rgba(22, 163, 74, 0.3);
+    opacity: 0.8;
+    pointer-events: none;
+}
+
+p {
+    color: var(--text_silver);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ================= HEADER ================= */
+.website_header {
+    background: linear-gradient(120deg, #0b1a3a, #020617);
+    padding: 20px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.company_logo {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--gold);
+}
+
+.company_logo span {
+    color: var(--money_green);
+}
+
+/* Push footer to bottom */
+main {
+    flex: 1;
+}
+
+
+.main_navigation a {
+    margin-left: 25px;
+    color: var(--text_silver);
+    position: relative;
+}
+
+.main_navigation a:hover {
+    color: var(--gold);
+}
+
+.main_navigation a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0%;
+    height: 2px;
+    background: var(--gold);
+    transition: width 0.3s ease;
+}
+
+.main_navigation a:hover::after {
+    width: 100%;
+}
+
+/* ================= HERO ================= */
+.hero_section {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.hero_text h1 {
+    font-size: 3rem;
+}
+
+.hero_text span {
+    color: var(--gold);
+}
+
+.hero_cta a {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 25px 45px;
+    border-radius: 8px;
+    font-weight: bold;
+    color: var(--white);
+    cursor: pointer;
+    text-decoration: none;
+    background: var(--hero_btn_gradient);
+}
+
+.hero_image {
+    height: 400px;
+    border-radius: 16px;
+    background-size: cover;
+    background-position: center;
+}
+
+.alc_h2{
+    font-weight: bold;
+    margin-top: 50px;
+    color: var(--money_green);
+}
+/* ================= CUSTOMER LOGIN ================= */
+.customer_login_prompt {
+    text-align: center;
+}
+
+.customer_image {
+    width: 950px;
+    height: 500px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.login_icons {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin: 30px 0;
+}
+
+.login_icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    color: var(--bank_blue);
+    justify-content: center;
+    align-items: center;
+    background: #0f172a;
+    font-size: 2rem;
+}
+
+.login_icon img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  
+}
+
+.login_icon img:hover {
+    transform: scale(1.2);
+    transition: transform 0.3s ease;
+}
+
+.login_actions {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* ================= EMI CALCULATOR ================= */
+
+/* ================= EMI CALCULATOR ================= */
+
+/* Container spacing */
+.emi_calculator {
+    margin-top: 20px;
+    max-width: 450px; 
+     color: var(--gold);/* optional: keep calculator compact */
+    margin: 0 auto;         /* center on page */
+    padding: 20px;
+}
+
+/* Stack label above input and give spacing */
+.emi_calculator .form_group {
+     margin-top: 20px;
+     color: var(--gold);
+    display: flex;
+    flex-direction: column; /* label on top of input */
+    margin-bottom: 20px;    /* space between fields */
+}
+
+/* Inputs styling */
+.emi_calculator input {
+    color: var(--gold);
+    margin-top: 20px;
+    padding: 12px 14px;
+    font-size: 16px;
+    border: 1px solid #444;
+    border-radius: 6px;
+    background: #020617;      /* matches your dark theme */
+    color: var(--white);
+}
+
+/* Button styling */
+.emi_calculator_button {
+    margin-top: 20px;
+    width: 100%;               /* full width button */
+    padding: 12px;
+    border-radius: 6px;
+    background: var(--btn_gradient);
+    color: var(--white);
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 15px;
+}
+
+.emi_calculator_button:hover {
+    
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px var(--btn_hover_shadow);
+}
+
+/* EMI Result styling */
+#emi_result {
+    margin-top: 15px;
+    font-weight: 600;
+     color: var(--gold);
+    text-align: center;
+}
+
+/* ================= SECTION HEADINGS ================= */
+.features_section h2,
+.loan_types_section h2,
+.gov_links_section h2,
+.testimonials_section h2,
+.faq_section h2 {
+    font-size: 2.5rem;
+    color: var(--gold);
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+/* ================= GRIDS ================= */
+.feature_grid,
+.loan_grid,
+.gov_grid,
+.testimonial_grid,
+.faq_grid {
+    display: grid;
+    gap: 25px;
+    justify-items: center;
+}
+
+.feature_grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.loan_grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.gov_grid {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.testimonial_grid {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.faq_grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+
+
+/* ================= PREMIUM CARDS ================= */
+.feature_card,
+.loan_card,
+.gov_card,
+.testimonial_card,
+.faq_item {
+    background: var(--card_dark);
+    padding: 30px 25px;
+    border-radius: 22px;
+    min-height: 320px;
+    text-align: center;
+    color: var(--gold);
+
+    /* Required for gradient border */
+    border: 2px solid transparent;
+    background-image: linear-gradient(var(--card_dark), var(--card_dark));
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-image 0.3s ease;
+}
+
+/* ================= CARD HOVER ================= */
+.feature_card:hover,
+.loan_card:hover,
+.gov_card:hover,
+.testimonial_card:hover,
+.faq_item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+
+    background-image:
+        linear-gradient(var(--card_dark), var(--card_dark)),
+        linear-gradient(90deg, var(--gold), var(--money_green));
+}
+
+
+
+
+
+/* ================= CARD IMAGES ================= */
+.feature_card img,
+.loan_card img,
+.gov_card img,
+.testimonial_card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+
+.feature_card h3,
+.loan_card h3,
+.gov_card h3 {
+    margin: 10px 0;
+    color: var(--money_green);
+}
+
+.feature_card p,
+.loan_card p,
+.gov_card p,
+.testimonial_card p,
+.faq_item p {
+    font-size: 0.95rem;
+    color: var(--text_silver);
+}
+
+.testimonial_card h4 {
+    margin-top: 15px;
+    color: var(--gold);
+}
+
+/* ================= BUTTONS ================= */
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 6px;
+    background: var(--btn_gradient);
+    color: var(--white);
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 20px var(--btn_hover_shadow);
+}
+
+/* ================= FOOTER ================= */
+.website_footer {
+    padding: 25px 60px;
+    text-align: center;
+    background: linear-gradient(120deg, #0b1a3a, #020617);
+    color: var(--text_silver);
+    position: relative;
+}
+
+.website_footer {
+    padding: 25px 60px;
+    text-align: center;
+    background: #020617; /* same as login page */
+    color: var(--text_silver);
+    position: relative; /* required for glow */
+    width: 100%;        /* full width */
+    box-sizing: border-box;
+    margin-top: auto;   /* push footer down if page content is short */
+}
+
+/* Glowing divider above footer */
+.website_footer::before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 95%;
+    height: 2px;
+    border-radius: 50px;
+
+    background: linear-gradient(
+        80deg,
+        transparent 0%,
+        rgba(234, 179, 8, 0.8) 35%,
+        rgba(22, 163, 74, 0.9) 55%,
+        rgba(234, 179, 8, 0.8) 60%,
+        transparent 100%
+    );
+
+    box-shadow:
+        0 0 8px rgba(234, 179, 8, 0.4),
+        0 0 12px rgba(22, 163, 74, 0.3);
+
+    opacity: 0.8;
+}
+.website_header::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 95%;
+    height: 2px;
+    border-radius: 50px;
+
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(234, 179, 8, 0.8) 30%,
+        rgba(22, 163, 74, 0.9) 50%,
+        rgba(234, 179, 8, 0.8) 70%,
+        transparent 100%
+    );
+
+    box-shadow:
+        0 0 8px rgba(234, 179, 8, 0.4),
+        0 0 12px rgba(22, 163, 74, 0.3);
+
+    opacity: 0.8;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 1024px) {
+    .hero_section {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        text-align: center;
+    }
+
+    .website_header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px 30px;
+    }
+
+    section {
+        padding: 60px 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .feature_grid,
+    .loan_grid,
+    .gov_grid,
+    .testimonial_grid,
+    .faq_grid {
+        grid-template-columns: 1fr;
+    }
+}

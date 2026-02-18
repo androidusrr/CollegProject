@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="6.1" xmlns="https://jakarta.ee/xml/ns/jakartaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_1.xsd">
+    
+    <welcome-file-list>
+    <welcome-file>home_index.html</welcome-file>
+</welcome-file-list>
+
+    <servlet>
+        <servlet-name>RegisterServlet</servlet-name>
+        <servlet-class>util.RegisterServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>util.LoginServlet</servlet-class>
+    </servlet>
+     <servlet>
+        <servlet-name>Admin_Login</servlet-name>
+        <servlet-class>util.Admin_Login</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ApplyLoanServlet</servlet-name>
+        <servlet-class>util.ApplyLoanServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RegisterServlet</servlet-name>
+        <url-pattern>/RegisterServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/LoginServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ApplyLoanServlet</servlet-name>
+        <url-pattern>/ApplyLoanServlet</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>Admin_Login</servlet-name>
+        <url-pattern>/Admin_Login</url-pattern>
+    </servlet-mapping>
+</web-app>

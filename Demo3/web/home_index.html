@@ -1,0 +1,541 @@
+<!--<!DOCTYPE html>
+
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this template
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RupeeLoans - Personal Loans in India</title>
+    <link rel="stylesheet" href="about_style.css">
+     CONNECTED CSS FILE 
+    <link rel="stylesheet" href="home_style.css">
+</head>
+<body>
+
+ ================= HEADER ================= 
+
+<header class="website_header">
+    <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+/>
+
+    <div class="company_logo">Rupee<span>Loans</span></div>
+
+    <nav class="main_navigation">
+        <a href="home_index.html">
+            <i class="fa-solid fa-house"></i> Home
+        </a>
+
+        <a href="login_index.html">
+            <i class="fa-solid fa-right-to-bracket"></i> Login
+        </a>
+        
+         <a href="admin_login.html">
+                    <i class="fa-solid fa-user-tie"></i> Admin
+        </a>
+
+        <a href="register_index.html">
+            <i class="fa-solid fa-user-plus"></i> Register
+        </a>
+
+        <a href="about_index.html">
+            <i class="fa-solid fa-circle-info"></i> About
+        </a>
+
+        <a href="contact_index.html">
+            <i class="fa-solid fa-envelope"></i> Contact
+        </a>
+    </nav>
+</header>
+
+
+ ================= HERO ================= 
+<section class="hero_section">
+    <div class="hero_text">
+        <h1>Welcome to <span>RupeeLoans</span></h1>
+        <p>Get instant personal loans in ₹ with fast approval and trusted service across India.</p>
+        <div class="hero_cta">
+            <a href="login_index.html">Apply Now</a>
+        </div>
+    </div>
+    <div class="hero_image"></div>
+</section>
+
+ ================= CUSTOMER LOGIN + EMI ================= 
+<section class="customer_login_prompt">
+
+    <img src="yourimage.jpg" alt="Customer" class="customer_image">
+
+    <h2>Already a Customer?</h2>
+    <p>Log in to manage your personal loans or apply for a new one.</p>
+
+    <div class="login_icons">
+        <div class="login_icon">💰</div>
+        <div class="login_icon">🔒</div>
+        <div class="login_icon">⚡</div>
+    </div>
+
+    <div class="login_actions">
+        <a href="login_index.html" class="theme_btn"><span>Log In</span></a>
+        <a href="register_index.html" class="theme_btn"><span>Register</span></a>
+    </div>
+
+     EMI Calculator 
+    <div class="emi_calculator">
+        <h3>EMI Calculator</h3>
+        <form onsubmit="calculateEMI(event)">
+            <input type="number" placeholder="Loan Amount (₹)" id="loan_amount" required>
+            <input type="number" placeholder="Interest Rate (%)" id="interest_rate" required>
+            <input type="number" placeholder="Tenure (Years)" id="tenure" required>
+            <button type="submit">Calculate EMI</button>
+        </form>
+        <p id="emi_result"></p>
+    </div>
+
+    <a href="login_index.html" class="apply_btn">Apply for Loan</a>
+
+    <div class="orb1"></div>
+    <div class="orb2"></div>
+    <div class="orb3"></div>
+</section>
+
+ ================= FEATURES ================= 
+<section class="features_section">
+    <h2>Key Features</h2>
+    <div class="feature_grid">
+        <div class="feature_card">
+            <div class="feature_icon">💰</div>
+            <h3>Instant Rupee Loans</h3>
+            <p>Quick approval and instant disbursal in ₹ across India.</p>
+        </div>
+        <div class="feature_card">
+            <div class="feature_icon">🔒</div>
+            <h3>Secure & Futuristic</h3>
+            <p>Advanced encryption ensures safe online loan processing.</p>
+        </div>
+        <div class="feature_card">
+            <div class="feature_icon">⚡</div>
+            <h3>Fast Processing</h3>
+            <p>Minimal documentation and speedy loan approval process.</p>
+        </div>
+    </div>
+</section>
+
+ ========================GOV SECTION ==================== 
+<section class="gov_links_section">
+    <h2>Important Government Resources</h2>
+    <div class="gov_grid">
+        <div class="gov_card">
+            <i class="fa-solid fa-landmark"></i>
+            <h3>Reserve Bank of India</h3>
+            <p>Official site for RBI notifications, policies, and banking guidelines.</p>
+            <a href="https://www.rbi.org.in/" target="_blank">Visit RBI</a>
+        </div>
+        <div class="gov_card">
+            <i class="fa-solid fa-shield-halved"></i>
+            <h3>Cyber Scam Awareness</h3>
+            <p>Learn how to protect yourself from banking and loan fraud.</p>
+            <a href="https://www.cybercrime.gov.in/" target="_blank">Report Scam</a>
+        </div>
+        <div class="gov_card">
+            <i class="fa-solid fa-file-contract"></i>
+            <h3>Financial Fraud Complaint</h3>
+            <p>Submit complaints about online fraud and financial scams.</p>
+            <a href="https://www.ibbi.gov.in/" target="_blank">Submit Complaint</a>
+        </div>
+    </div>
+</section>
+ ========================TESTIMONIAL==================== 
+<section class="testimonials_section">
+    <h2>What Our Customers Say</h2>
+    <div class="testimonial_grid">
+        <div class="testimonial_card">
+            <p>“RupeeLoans helped me get a personal loan quickly and hassle-free!”</p>
+            <h4>— Anjali Sharma</h4>
+        </div>
+        <div class="testimonial_card">
+            <p>“The customer support is excellent. I highly recommend them.”</p>
+            <h4>— Rajesh Kumar</h4>
+        </div>
+        <div class="testimonial_card">
+            <p>“Easy process, fast disbursal. Very trustworthy service.”</p>
+            <h4>— Priya Singh</h4>
+        </div>
+    </div>
+</section>
+
+<! FAQ 
+<section class="faq_section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq_grid">
+        <div class="faq_item">
+            <h3>How quickly can I get a loan?</h3>
+            <p>Loans are approved within 24-48 hours after document verification.</p>
+        </div>
+        <div class="faq_item">
+            <h3>What is the minimum salary required?</h3>
+            <p>We provide personal loans for salaried and self-employed individuals with a minimum monthly income of ₹10,000.</p>
+        </div>
+        <div class="faq_item">
+            <h3>How do I apply for a loan online?</h3>
+            <p>You can apply online using the "Apply Now" button and fill out the loan application form.</p>
+        </div>
+    </div>
+</section>
+
+
+
+ ================= FOOTER ================= 
+<footer class="website_footer">
+    © 2026 RupeeLoans. All Rights Reserved.
+</footer>
+
+ ================= JS ================= 
+<script>
+function calculateEMI(e) {
+    e.preventDefault();
+
+    let P = parseFloat(document.getElementById('loan_amount').value);
+    let R = parseFloat(document.getElementById('interest_rate').value) / 12 / 100;
+    let N = parseFloat(document.getElementById('tenure').value) * 12;
+
+    let emi = P * R * Math.pow(1 + R, N) / (Math.pow(1 + R, N) - 1);
+
+    document.getElementById('emi_result').innerText =
+        "Estimated EMI: ₹ " + emi.toFixed(2);
+}
+</script>
+
+</body>
+</html>-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>RupeeLoans - Personal Loans in India</title>
+<link rel="stylesheet" href="home_style.css" />
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+/>
+<style>
+  /* Inline style for EMI result visibility */
+  #emi_result {
+    margin-top: 15px;
+    color: #eab308; /* fallback for var(--gold) */
+    font-weight: bold;
+  }
+</style>
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="website_header">
+   
+  <div class="company_logo">Rupee<span>Loans</span></div>
+  <nav class="main_navigation">
+    <a href="home_index.html"><i class="fa-solid fa-house"></i> Home</a>
+    <a href="login_index.html"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
+    <a href="admin_login.html"><i class="fa-solid fa-user-tie"></i> Admin</a>
+    <a href="register_index.html"><i class="fa-solid fa-user-plus"></i> Register</a>
+    <a href="about_index.html"><i class="fa-solid fa-circle-info"></i> About</a>
+    <a href="contact_index.html"><i class="fa-solid fa-envelope"></i> Contact</a>
+  </nav>
+</header>
+ <main>
+<!-- ================= HERO ================= -->
+<section class="hero_section">
+  <div class="hero_text">
+    <h1>Welcome to <span>RupeeLoans</span></h1>
+    <p>Get instant personal loans in ₹ with fast approval and trusted service across India.</p>
+    <div class="hero_cta">
+      <a href="login_index.html" class="btn hover-lift">Apply Now</a>
+    </div>
+  </div>
+  <div
+    class="hero_image"
+    style="background-image: url('https://images.pexels.com/photos/7821513/pexels-photo-7821513.jpeg');"
+  ></div>
+</section>
+
+<!-- ================= CUSTOMER LOGIN + EMI ================= -->
+<section class="customer_login_prompt">
+  <img
+    src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg"
+    alt="Customer"
+    class="customer_image"
+  />
+  <div class="alc_h2">
+  <h2>Already a Customer?</h2>
+  <p>Log in to manage your personal loans or apply for a new one.</p>
+  </div>
+  
+  <!-- Three small images above calculator -->
+  <div class="login_icons">
+    <div class="login_icon">
+        <i class="fa-solid fa-address-card"></i>
+    </div>
+    <div class="login_icon">
+     <i class="fa-solid fa-credit-card"></i>
+    </div>
+    <div class="login_icon">
+      <i class="fa-solid fa-indian-rupee-sign"></i>
+    </div>
+  </div>
+
+  <div class="login_actions">
+    <a href="login_index.html" class="btn theme_btn hover-lift">Log In</a>
+    <a href="register_index.html" class="btn theme_btn hover-lift">Register</a>
+  </div>
+
+  <!-- EMI Calculator -->
+  <!-- ================= EMI CALCULATOR ================= -->
+<section class="emi_calculator">
+    <h2>EMI Calculator</h2>
+    <form id="emi_form">
+        <div class="form_group">
+            <label for="loan_amount">Loan Amount (₹)</label>
+            <input type="number" id="loan_amount" placeholder="Enter loan amount" required>
+        </div>
+        <div class="form_group">
+            <label for="interest_rate">Interest Rate (%)</label>
+            <input type="number" id="interest_rate" placeholder="Annual interest rate" step="0.01" required>
+        </div>
+       
+            
+        <div class="form_group">
+            <label for="tenure">Tenure (Years)</label>
+            <input type="number" id="tenure" placeholder="Loan tenure in years" required>
+        </div>
+       
+        <button type="submit" class="emi_calculator_button">Calculate EMI</button>
+        
+    </form>
+    <p id="emi_result"></p>
+</section>
+
+<script>
+document.getElementById('emi_form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    let P = parseFloat(document.getElementById('loan_amount').value);
+    let R = parseFloat(document.getElementById('interest_rate').value) / 12 / 100;
+    let N = parseFloat(document.getElementById('tenure').value) * 12;
+
+    if (P > 0 && R >= 0 && N > 0) {
+        let emi = P * R * Math.pow(1 + R, N) / (Math.pow(1 + R, N) - 1);
+        document.getElementById('emi_result').innerText = "Estimated EMI: ₹ " + emi.toFixed(2);
+    } else {
+        document.getElementById('emi_result').innerText = "Please enter valid values!";
+    }
+});
+</script>
+
+<!-- ================= FEATURES ================= -->
+<section class="features_section">
+  <h2>Key Features</h2>
+  <div class="feature_grid">
+    <div class="feature_card hover-lift">
+      <img
+        src="https://images.pexels.com/photos/325185/pexels-photo-325185.jpeg"
+        alt="Instant Loans"
+      />
+      <h3>Instant Rupee Loans</h3>
+      <p>Quick approval and instant disbursal in ₹ across India.</p>
+    </div>
+    <div class="feature_card hover-lift">
+      <img
+        src="https://images.pexels.com/photos/669610/pexels-photo-669610.jpeg"
+        alt="Security"
+      />
+      <h3>Secure & Futuristic</h3>
+      <p>Advanced encryption ensures safe online loan processing.</p>
+    </div>
+    <div class="feature_card hover-lift">
+      <img
+        src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg"
+        alt="Fast"
+      />
+      <h3>Fast Processing</h3>
+      <p>Minimal documentation and speedy loan approval process.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= GOV SECTION ================= -->
+<section class="gov_links_section">
+  <h2>Important Government Resources</h2>
+  <div class="gov_grid">
+    <div class="gov_card hover-lift">
+      <img
+        src="https://assets.entrepreneur.com/content/3x2/2000/1670403980-Hithere.png"
+        alt="RBI"
+      />
+      <h3>Reserve Bank of India</h3>
+      <p>Official site for RBI notifications, policies, and banking guidelines.</p>
+      <a href="https://www.rbi.org.in/" target="_blank" class="btn">Visit RBI</a>
+    </div>
+    <div class="gov_card hover-lift">
+      <img
+        src="https://images.pexels.com/photos/669610/pexels-photo-669610.jpeg"
+        alt="Cyber Awareness"
+      />
+      <h3>Cyber Scam Awareness</h3>
+      <p>Learn how to protect yourself from banking and loan fraud.</p>
+      <a
+        href="https://www.cybercrime.gov.in/"
+        target="_blank"
+        class="btn"
+        >Report Scam</a
+      >
+    </div>
+    <div class="gov_card hover-lift">
+      <img
+        src="https://images.pexels.com/photos/7247413/pexels-photo-7247413.jpeg"
+        alt="Financial Complaint"
+      />
+      <h3>Financial Fraud Complaint</h3>
+      <p>Submit complaints about online fraud and financial scams.</p>
+      <a href="https://www.ibbi.gov.in/" target="_blank" class="btn"
+        >Submit Complaint</a
+      >
+    </div>
+  </div>
+</section>
+
+<!-- ================= LOAN TYPES ================= -->
+<section class="loan_types_section">
+  <h2>Our Services</h2>
+  <div class="loan_grid">
+    <div class="loan_card hover-lift">
+      <img
+        src="https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg"
+        alt="Home Loan"
+      />
+      <h3>Home Loan</h3>
+      <p>
+        Get financial assistance to buy or renovate your dream home with
+        flexible repayment options.
+      </p>
+    </div>
+    <div class="loan_card hover-lift">
+      <img
+        src="https://images.pexels.com/photos/210019/pexels-photo-210019.jpeg"
+        alt="Car Loan"
+      />
+      <h3>Car Loan</h3>
+      <p>
+        Finance your new or used car purchase easily with low-interest rates
+        and quick approval.
+      </p>
+    </div>
+    <div class="loan_card hover-lift">
+      <img
+        src="https://images.pexels.com/photos/259200/pexels-photo-259200.jpeg"
+        alt="Personal Loan"
+      />
+      <h3>Personal Loan</h3>
+      <p>
+        Get instant funds for personal needs like travel, weddings, or
+        emergencies without collateral.
+      </p>
+    </div>
+    <div class="loan_card hover-lift">
+      <img
+        src="https://images.pexels.com/photos/7583367/pexels-photo-7583367.jpeg"
+        alt="Medical Loan"
+      />
+      <h3>Medical Loan</h3>
+      <p>Cover your medical expenses with quick approval and affordable EMI plans.</p>
+    </div>
+    <div class="loan_card hover-lift">
+      <img
+        src="https://images.pexels.com/photos/18012459/pexels-photo-18012459.jpeg"
+        alt="Educational Loan"
+      />
+      <h3>Educational Loan</h3>
+      <p>
+        Fund your higher education in India or abroad with flexible repayment
+        options.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TESTIMONIAL ================= -->
+<section class="testimonials_section">
+  <h2>What Our Customers Say</h2>
+  <div class="testimonial_grid">
+    <div class="testimonial_card hover-lift">
+      <img
+        src="https://images.pexels.com/photos/12798672/pexels-photo-12798672.jpeg"
+        alt="Customer 1"
+      />
+      <p>“RupeeLoans helped me get a personal loan quickly and hassle-free!”</p>
+      <h4>— Anjali Sharma</h4>
+    </div>
+    <div class="testimonial_card hover-lift">
+      <img
+        src="https://images.pexels.com/photos/7752846/pexels-photo-7752846.jpeg"
+        alt="Customer 2"
+      />
+      <p>“The customer support is excellent. I highly recommend them.”</p>
+      <h4>— Rajesh Kumar</h4>
+    </div>
+    <div class="testimonial_card hover-lift">
+      <img
+        src="https://images.pexels.com/photos/12903545/pexels-photo-12903545.jpeg"
+        alt="Customer 3"
+      />
+      <p>“Easy process, fast disbursal. Very trustworthy service.”</p>
+      <h4>— Priya Singh</h4>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="faq_section">
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq_grid">
+    <div class="faq_item hover-lift">
+        
+      <h3>How quickly can I get a loan?</h3>
+      <p>Loans are approved within 24-48 hours after document verification.
+      We have 24/7 customer support with team of application reviewers working 
+      countless hours for your service.
+      </p>
+    </div>
+    <div class="faq_item hover-lift">
+      <h3>What is the minimum salary required?</h3>
+      <p>
+        We provide personal loans for salaried and self-employed individuals
+        with a minimum monthly income of ₹10,000.
+        But we have plans for Students how are still in School and Collegs 
+        Just fill out one Nominee for your application
+      </p>
+    </div>
+    <div class="faq_item hover-lift">
+      <h3>How do I apply for a loan online?</h3>
+      <p>
+        You can apply online using the "Apply Now" button and fill out the loan
+        application form.
+        Application and the Account Creation is absolutely Free.
+        Try For Yourself
+      </p>
+    </div>
+  </div>
+</section>
+
+</main>
+<!-- ================= FOOTER ================= -->
+<footer class="website_footer">
+  © 2026 RupeeLoans. All Rights Reserved.
+</footer>
+
+
+</body>
+</html>

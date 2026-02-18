@@ -1,0 +1,188 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg_dark: #0B0F1A;
+    --card_dark: #111827;
+    --bank_blue: #1E3A8A;
+    --money_green: #16A34A;
+    --gold: #EAB308;
+    --text_silver: #CBD5E1;
+    --white: #FFFFFF;
+}
+
+body {
+    font-family: Roboto, Arial, sans-serif;
+    background: var(--bg_dark);
+    color: var(--white);
+}
+
+.website_header {
+   
+    background: linear-gradient(90deg, #020617, var(--card_dark));
+    padding: 20px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+.main_navigation a:hover {
+    margin-left: 25px;
+    color: var(--gold);
+    position: relative;
+}
+.company_logo {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--gold);
+}
+
+.company_logo span {
+    color: var(--money_green);
+}
+
+.main_navigation a {
+    margin-left: 25px;
+    color: var(--text_silver);
+}
+
+.register_section {
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.register_form {
+    background: var(--card_dark);
+    padding: 40px;
+    border-radius: 14px;
+    width: 100%;
+    max-width: 420px;
+    text-align: center;
+    
+      border: 1px solid transparent;
+    background-image:
+        linear-gradient(var(--card_dark), var(--card_dark)),
+        linear-gradient(90deg, var(--gold), var(--money_green));
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+}
+
+.register_form h2 {
+    color: var(--gold);
+    margin-bottom: 20px;
+}
+
+.register_form input {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 15px;
+    background: #020617;
+    border: 1px solid #1F2937;
+    color: white;
+    border-radius: 6px;
+}
+
+.register_form button {
+    width: 100%;
+    padding: 14px;
+    border-radius: 6px;
+    border: none;
+    background: linear-gradient(45deg, var(--money_green), var(--bank_blue));
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+}
+
+.switch_text {
+    margin-top: 20px;
+}
+
+.switch_text a {
+    color: var(--gold);
+}
+
+.main_navigation a {
+    position: relative;
+}
+
+.main_navigation a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0%;
+    height: 2px;
+    background: var(--gold);
+    transition: width 0.3s ease;
+}
+
+.main_navigation a:hover::after {
+    
+    width: 100%;
+}
+.website_footer {
+    text-align: center;
+    padding: 25px;
+    background: #020617;
+    color: var(--text_silver);
+    position: relative; /* Required for glowing divider */
+}
+.website_footer::before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 95%;
+    height: 2px;
+    border-radius: 50px;
+
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(234, 179, 8, 0.8) 30%,
+        rgba(22, 163, 74, 0.9) 50%,
+        rgba(234, 179, 8, 0.8) 70%,
+        transparent 100%
+    );
+
+    box-shadow:
+        0 0 8px rgba(234, 179, 8, 0.4),
+        0 0 12px rgba(22, 163, 74, 0.3);
+
+    opacity: 0.8;
+}
+
+
+
+.website_header::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 95%;
+    height: 2px;
+    border-radius: 50px;
+    color: var(--gold);
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(234, 179, 8, 0.8) 30%,
+        rgba(22, 163, 74, 0.9) 50%,
+        rgba(234, 179, 8, 0.8) 70%,
+        transparent 100%
+    );
+
+    box-shadow:
+        0 0 8px rgba(234, 179, 8, 0.4),
+        0 0 12px rgba(22, 163, 74, 0.3);
+
+    opacity: 0.8;
+}

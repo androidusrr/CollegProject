@@ -1,0 +1,225 @@
+/* ================= LOGOUT PAGE BASE ================= */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: linear-gradient(90deg, #0b1a3a, #020617);
+    font-family: "Roboto", Arial, sans-serif;
+    color: #FFFFFF;
+    margin: 0;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ================= HEADER ================= */
+.website_header {
+    background: linear-gradient(120deg, #0b1a3a, #020617);
+    padding: 20px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.company_logo {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #EAB308;
+}
+
+.company_logo span {
+    color: #16A34A;
+}
+
+.main_navigation a {
+    margin-left: 25px;
+    color: #CBD5E1;
+    position: relative;
+}
+
+.main_navigation a:hover {
+    color: #EAB308;
+}
+
+.main_navigation a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0%;
+    height: 2px;
+    background: #EAB308;
+    transition: width 0.3s ease;
+}
+
+.main_navigation a:hover::after {
+    width: 100%;
+}
+
+/* Header glow divider */
+.website_header::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 95%;
+    height: 2px;
+    border-radius: 50px;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(234, 179, 8, 0.8) 30%,
+        rgba(22, 163, 74, 0.9) 50%,
+        rgba(234, 179, 8, 0.8) 70%,
+        transparent 100%
+    );
+    box-shadow: 0 0 8px rgba(234, 179, 8, 0.4), 0 0 12px rgba(22, 163, 74, 0.3);
+    opacity: 0.8;
+}
+
+/* ================= LOGOUT CARD ================= */
+.logout_card {
+    background: #111827; /* matches card dark */
+    padding: 40px 30px;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    border: 3px solid transparent;
+    background-image:
+        linear-gradient(#111827, #111827),
+        linear-gradient(90deg, #EAB308, #16A34A); /* gold → money green */
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    box-shadow: 0 12px 25px rgba(22,163,74,0.25);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.logout_card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 25px 40px rgba(22,163,74,0.35);
+    
+}
+
+.logout_card i {
+    font-size: 7rem;
+    color: #f53b5d; /* gold */
+    margin-bottom: 20px;
+    
+       /* Subtle pink glow */
+   
+    /* Gentle glow */
+    text-shadow:
+        0 0 3px #f53b5d,
+        0 0 6px #f53b5d,
+        0 0 9px #f53b5d;
+
+    /* Smooth pulse + tiny bounce */
+    animation: pawPulse 1.2s infinite ease-in-out;
+    
+}
+
+.logout_card h2 {
+    font-size: 1.8rem;
+    color: #16A34A; /* money green */
+    margin-bottom: 15px;
+}
+
+.logout_card p {
+    color: #CBD5E1; /* text silver */
+    font-size: 1rem;
+    margin-bottom: 25px;
+}
+
+.logout_card a {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 10px;
+    font-weight: bold;
+    color: #FFFFFF;
+    background: linear-gradient(45deg, #16A34A, #1E3A8A); /* money green → bank blue */
+    text-decoration: none;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.logout_card a:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 18px rgba(22,163,74,0.3);
+}
+
+/* ================= FOOTER ================= */
+.website_footer {
+    margin-top: 50px;
+    text-align: center;
+    padding: 20px 60px;
+    color: #CBD5E1;
+    width: 100%;
+    position: relative;
+}
+
+.website_footer::before {
+    content: "";
+    display: block;
+    width: 95%;
+    height: 2px;
+    margin: 0 auto 10px;
+    border-radius: 50px;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(234, 179, 8, 0.8) 30%,
+        rgba(22, 163, 74, 0.9) 50%,
+        rgba(234, 179, 8, 0.8) 70%,
+        transparent 100%
+    );
+    box-shadow: 0 0 8px rgba(234, 179, 8, 0.4),
+                0 0 12px rgba(22, 163, 74, 0.3);
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+    .logout_card {
+        padding: 30px 20px;
+    }
+    .main_navigation {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+}
+
+/* Pulsating glow animation */
+
+/* Pulsing + slight scale */
+@keyframes pawPulse {
+    0% {
+        transform: scale(1);
+        text-shadow:
+            0 0 3px #f53b5d,
+            0 0 6px #f53b5d,
+            0 0 9px #f53b5d;
+    }
+    50% {
+        transform: scale(1.1) rotate(2deg);
+        text-shadow:
+            0 0 6px #f53b5d,
+            0 0 12px #f53b5d,
+            0 0 15px #f53b5d;
+    }
+    100% {
+        transform: scale(1) rotate(-1deg);
+        text-shadow:
+            0 0 3px #f53b5d,
+            0 0 6px #f53b5d,
+            0 0 9px #f53b5d;
+    }
+}
